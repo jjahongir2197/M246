@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Students</title>
+</head>
+<body>
+
+<h2>Student qo‘shish</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Ism">
+    <input type="text" name="grade" placeholder="Baho">
+    <button type="submit">Qo‘shish</button>
+</form>
+
+<ul>
+{% for name, grade in students.items() %}
+    <li>{{ name }} - {{ grade }} 
+        <a href="/delete/{{ name }}">❌</a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
